@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "id": "akuji-the-heartless-psx",
+  "name": "Akuji the Heartless",
+  "kind": "recomp",
+  "platform": "psx",
+  "source_repo": "akuji-the-heartless-recomp",
+  "rom_identity": {
+    "crc32": [
+      "cabdfb8b"
+    ],
+    "md5": [
+      "f2a1287e071f2905c76c70ef47971c3d"
+    ],
+    "sha1": [
+      "6b2cc165e8826a65388831c80bb942405d89b430"
+    ],
+    "disc_serials": [
+      "SLES-01298"
+    ],
+    "sizes": [
+      573344688
+    ],
+    "filenames": [
+      "Akuji the Heartless (Europe) (En,Fr,De).cue",
+      "Akuji the Heartless (Europe) (En,Fr,De) (Track 1).bin"
+    ],
+    "track_counts": [
+      3
+    ],
+    "disc_fps": [
+      "d105376fe9612e6b19475dc4b49d25e0e08ad17b07dafdaed2b45110f3d7ba1c"
+    ],
+    "require_cue": true
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin",
+    ".chd"
+  ],
+  "bios_identity": {
+    "required": true,
+    "name": "SCPH5552.BIN",
+    "profile": "SCPH5552",
+    "crc32": [
+      "d786f0b9"
+    ],
+    "md5": [
+      "32736f17079d0b2b7024407c39bd3050"
+    ],
+    "sha1": [
+      "f6bc2d1f5eb6593de7d089c425ac681d6fffd3f0"
+    ],
+    "sha256": [
+      "1faaa18fa820a0225e488d9f086296b8e6c46df739666093987ff7d8fd352c09"
+    ],
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH5552.BIN"
+    ]
+  },
+  "release": {
+    "github": "alexbeavs-ps1-ports/akuji-the-heartless-recomp",
+    "allow_prerelease": false,
+    "asset_glob": {
+      "windows-x64": "akuji-the-heartless-*-windows-x64.zip",
+      "linux-x64": "akuji-the-heartless-*-linux-x64.zip",
+      "macos-arm64": "akuji-the-heartless-*-macos-arm64.zip",
+      "macos-x64": "akuji-the-heartless-*-macos-x64.zip"
+    }
+  },
+  "launch": {
+    "windows": "akuji_the_heartless.exe",
+    "linux": "akuji_the_heartless",
+    "macos": "akuji_the_heartless"
+  },
+  "build": {
+    "source": {
+      "github": "alexbeavs-ps1-ports/akuji-the-heartless-recomp",
+      "ref": ""
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "min_version": "1.0.14"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    }
+  }
+}

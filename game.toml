@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Akuji the Heartless"
+id = "SLES-01298"
+players = 1
+exe = "disc/SLES_012.98"
+disc = "disc/Akuji the Heartless (Europe) (En,Fr,De).cue"
+discs = ["disc/Akuji the Heartless (Europe) (En,Fr,De).cue"]
+disc_serials = ["SLES-01298"]
+load_address = "0x801F8000"
+entry_pc = "0x801FBE4C"
+text_size = "0x00005800"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Akuji the Heartless (Europe) (En,Fr,De) (Track 1).bin"
+cue_name = "Akuji the Heartless (Europe) (En,Fr,De).cue"
+boot_exe = "SLES_012.98"
+known_sizes = [573344688]
+known_md5 = [
+  "f2a1287e071f2905c76c70ef47971c3d",
+]
+known_sha1 = [
+  "6b2cc165e8826a65388831c80bb942405d89b430",
+]
+known_crc32 = [
+  "cabdfb8b",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH5552.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Akuji the Heartless Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 3
+required_disc_fp = "d105376fe9612e6b19475dc4b49d25e0e08ad17b07dafdaed2b45110f3d7ba1c"

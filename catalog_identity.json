@@ -1,0 +1,46 @@
+{
+  "format_version": 1,
+  "game": {
+    "name": "Akuji the Heartless",
+    "id": "SLES-01298",
+    "boot_exe": "SLES_012.98"
+  },
+  "marketing": {
+    "description": "",
+    "publisher": "",
+    "year": "",
+    "region": "Europe",
+    "players": 1
+  },
+  "rom_identity": {
+    "cue_name": "Akuji the Heartless (Europe) (En,Fr,De).cue",
+    "bin_name": "Akuji the Heartless (Europe) (En,Fr,De) (Track 1).bin",
+    "track_counts": [
+      3
+    ],
+    "require_cue": true,
+    "data_track": {
+      "size": 573344688,
+      "md5": "f2a1287e071f2905c76c70ef47971c3d",
+      "sha1": "6b2cc165e8826a65388831c80bb942405d89b430",
+      "crc32": "cabdfb8b"
+    },
+    "disc_fp": "d105376fe9612e6b19475dc4b49d25e0e08ad17b07dafdaed2b45110f3d7ba1c"
+  },
+  "exe": {
+    "load_address": "0x801F8000",
+    "entry_pc": "0x801FBE4C",
+    "text_size": "0x00005800",
+    "stack_base": "0x801FFFF0"
+  },
+  "seeds": {
+    "count": 68,
+    "source": "boot_exe_jal"
+  },
+  "warnings": [],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}
